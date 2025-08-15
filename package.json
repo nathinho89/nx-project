@@ -8,11 +8,23 @@
   "scripts": {
     "counter:dev": "yarn workspace @my-app/counter dev",
     "ui:dev": "yarn workspace @my-app/ui dev",
+    "types:build": "tsc -b tsconfig.build.json",
+    "types:watch": "tsc -b -w tsconfig.build.json",
     "dev": "run-p counter:dev ui:dev",
+    "dev:with-types": "run-p types:watch counter:dev ui:dev",
     "build": "yarn workspaces foreach -pt run build"
   },
   "devDependencies": {
-    "npm-run-all2": "^8.0.4"
+    "npm-run-all2": "^8.0.4",
+    "typescript": "^5.9.2"
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@my-app/*": [
+        "packages/*/src"
+      ]
+    }
   },
   "packageManager": "yarn@4.9.2"
 }

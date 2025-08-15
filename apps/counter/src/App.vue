@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import { greet } from '@my-app/ui'
+import type { Require, ReadonlyDeep } from "@my-app/type-utils"
 
 const greeting = greet('Nathan')
 </script>

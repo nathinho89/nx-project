@@ -1,0 +1,15 @@
+{
+  "name": "@my-app/type-utils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b -w"
+  }
+}
