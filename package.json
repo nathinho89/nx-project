@@ -1,0 +1,9 @@
+{
+  "name": "ns-project",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "yarn@4.9.2"
+}
