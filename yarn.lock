@@ -804,6 +804,10 @@ __metadata:
 "@my-app/ui@workspace:*, @my-app/ui@workspace:packages/ui":
   version: 0.0.0-use.local
   resolution: "@my-app/ui@workspace:packages/ui"
+  dependencies:
+    typescript: "npm:~5.8.0"
+    vite: "npm:^7.0.6"
+    vitest: "npm:^3.2.4"
   languageName: unknown
   linkType: soft
 
@@ -3528,12 +3532,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ns-project@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "ns-project@workspace:."
-  languageName: unknown
-  linkType: soft
-
 "nth-check@npm:^2.1.1":
   version: 2.1.1
   resolution: "nth-check@npm:2.1.1"
@@ -3549,6 +3547,14 @@ __metadata:
   checksum: 10c0/dd330cabb886fd417624bd3af368d86c3d507c002c05fb2f7981874204298deec9e8bd5103d8a0c4a0e0dc280276dc4a59a059e1045eeb7a628f79e6cefba6a3
   languageName: node
   linkType: hard
+
+"nx-project@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "nx-project@workspace:."
+  dependencies:
+    npm-run-all2: "npm:^8.0.4"
+  languageName: unknown
+  linkType: soft
 
 "ohash@npm:^2.0.11":
   version: 2.0.11

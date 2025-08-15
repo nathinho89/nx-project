@@ -1,9 +1,18 @@
 {
-  "name": "ns-project",
+  "name": "nx-project",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "counter:dev": "yarn workspace @my-app/counter dev",
+    "ui:dev": "yarn workspace @my-app/ui dev",
+    "dev": "run-p counter:dev ui:dev",
+    "build": "yarn workspaces foreach -pt run build"
+  },
+  "devDependencies": {
+    "npm-run-all2": "^8.0.4"
+  },
   "packageManager": "yarn@4.9.2"
 }
