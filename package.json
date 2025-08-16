@@ -8,15 +8,20 @@
   "scripts": {
     "counter:dev": "yarn workspace @my-app/counter dev",
     "ui:dev": "yarn workspace @my-app/ui dev",
+    "utils:dev": "yarn workspace @my-app/core-utils dev",
     "types:build": "tsc -b tsconfig.build.json",
     "types:watch": "tsc -b -w tsconfig.build.json",
-    "dev": "run-p counter:dev ui:dev",
-    "dev:with-types": "run-p types:watch counter:dev ui:dev",
-    "build": "yarn workspaces foreach -pt run build"
+    "dev": "run-p counter:dev utils:dev ui:dev",
+    "dev:with-types": "run-p types:watch counter:dev utils:dev ui:dev",
+    "build": "yarn workspaces foreach -pt run build",
+    "clean:deps": "rm -f yarn.lock && rm -rf .yarn/cache .yarn/install-state.gz node_modules packages/*/node_modules",
+    "reinstall": "yarn cache clean && yarn install",
+    "reset": "run-s clean:deps reinstall"
   },
   "devDependencies": {
     "npm-run-all2": "^8.0.4",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "compilerOptions": {
     "baseUrl": ".",

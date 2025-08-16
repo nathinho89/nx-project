@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import { greet } from '@my-app/ui'
+import { greet } from '@my-app/core-utils'
 import type { Require, ReadonlyDeep } from "@my-app/type-utils"
+import { BaseButton } from '@my-app/ui'
 
 const greeting = greet('Nathan')
 </script>
@@ -13,6 +14,9 @@ const greeting = greet('Nathan')
 
     <div class="wrapper">
       <HelloWorld :msg="greeting" />
+      <BaseButton>
+      I'm a button
+      </BaseButton>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

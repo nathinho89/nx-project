@@ -1,1 +1,1 @@
-export const greet = (n: string) => `Hello ${n}`;
+export { default as BaseButton } from './components/BaseButton.vue'
