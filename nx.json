@@ -1,16 +1,35 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "nxCloudId": "68a2ebf10d2ae8ba118e06fb",
+  "namedInputs": {
+    "sharedGlobals": [
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/yarn.lock",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/nx.json"
+    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/**/*.stories.*"
+    ]
+  },
   "targetDefaults": {
     "build": {
+      "cache": true,
       "dependsOn": ["^build"],
-      "cache": true
+      "inputs": ["production", "^production"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"]
     },
     "lint": {
-      "cache": true
+      "cache": true,
+      "inputs": ["default", "^default"]
     },
     "test": {
-      "cache": true
+      "cache": true,
+      "inputs": ["default", "^default"]
     }
   }
 }
