@@ -22,13 +22,13 @@ export default defineConfig({
   server: { port: 5173, strictPort: true },
   preview: { port: 4173, strictPort: true },
   plugins: [vue(), tsconfigPaths({ projects: ['../../tsconfig.base.json'] }), vueDevTools()],
-  optimizeDeps: {
-    exclude: workspacePackageNames(),
-  },
+  optimizeDeps: { exclude: workspacePackageNames() },
   resolve: {
     conditions: ['development', 'module', 'import'],
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
+    alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+  },
+  build: {
+    outDir: path.resolve(__dirname, '../../dist/apps/counter'),
+    emptyOutDir: true,
   },
 })

@@ -11,24 +11,19 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [vue()],
     root: isServe ? path.resolve(__dirname, "playground") : undefined,
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "src")
-      }
-    },
+    resolve: { alias: { "@": path.resolve(__dirname, "src") } },
     server: { port: 5174, strictPort: true, fs: { allow: [__dirname] } },
     preview: { port: 4174, strictPort: true },
     build: {
+      outDir: path.resolve(__dirname, "../../dist/packages/ui"),
+      emptyOutDir: true,
       lib: {
         entry: path.resolve(__dirname, "src/index.ts"),
         name: "MyAppUI",
         formats: ["es", "cjs"],
         fileName: fmt => (fmt === "es" ? "index.js" : "index.cjs")
       },
-      rollupOptions: {
-        external: ["vue"],
-        output: { globals: { vue: "Vue" } }
-      }
+      rollupOptions: { external: ["vue"], output: { globals: { vue: "Vue" } } }
     }
   }
 })

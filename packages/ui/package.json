@@ -23,11 +23,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "run-p types:build \"build-only {@}\" --",
+    "build-only": "vite build",
+    "types:build": "vue-tsc --build tsconfig.build.json",
+    "type-check": "vue-tsc -p tsconfig.json --noEmit",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
