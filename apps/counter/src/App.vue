@@ -1,9 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { greet } from '@my-app/core-utils'
-import { BaseButton } from '@my-app/ui'
-
-const greeting = greet('Nathan')
 </script>
 
 <template>
@@ -11,11 +7,6 @@ const greeting = greet('Nathan')
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <h1>{{ greeting }}</h1>
-      <BaseButton>
-      I'm a button
-      </BaseButton>
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -88,4 +79,6 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
+h1 { margin-bottom: 1.25rem; }
 </style>
