@@ -13,7 +13,7 @@
     "types:watch": "tsc -b -w tsconfig.build.json",
     "dev": "run-p counter:dev utils:dev ui:dev",
     "dev:with-types": "run-p types:watch counter:dev utils:dev ui:dev",
-    "build": "yarn workspaces foreach -pt run build",
+    "build": "yarn workspaces foreach --all -pt run build",
     "clean:deps": "rm -f yarn.lock && rm -rf .yarn/cache .yarn/install-state.gz node_modules packages/*/node_modules",
     "reinstall": "yarn cache clean && yarn install",
     "reset": "run-s clean:deps reinstall"
