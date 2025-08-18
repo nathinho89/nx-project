@@ -5,6 +5,12 @@
     "build": {
       "dependsOn": ["^build"],
       "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
     }
   }
 }
