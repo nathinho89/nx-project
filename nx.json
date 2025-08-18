@@ -1,4 +1,10 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "nxCloudId": "68a2ebf10d2ae8ba118e06fb"
+  "nxCloudId": "68a2ebf10d2ae8ba118e06fb",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  }
 }
