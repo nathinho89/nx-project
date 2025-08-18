@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "../../dist/packages/type-utils",
+    "declaration": true,
+    "declarationDir": "../../dist/packages/type-utils/types",
+    "emitDeclarationOnly": true,
+    "declarationMap": true
+  },
+  "include": ["src"]
+}

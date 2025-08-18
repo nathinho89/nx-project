@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "../../dist/packages/ui",
+    "declaration": true,
+    "declarationDir": "../../dist/packages/ui/types",
+    "emitDeclarationOnly": true,
+    "declarationMap": true
+  },
+  "include": ["src"]
+}
