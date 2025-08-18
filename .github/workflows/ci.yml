@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -18,12 +18,17 @@ jobs:
     env:
       CI: true
       NX_DAEMON: false
+      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Start Nx Cloud agents
+        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false }}
+        run: npx nx start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
 
       - name: Setup Node
         uses: actions/setup-node@v4
