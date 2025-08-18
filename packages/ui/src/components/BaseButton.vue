@@ -1,5 +1,5 @@
 <template>
-  <button class="base_btn" :disabled="disabled" :readonly="readonly" @click="onClick">
+  <button class="base_btn" :disabled="disabled" :read-only="readonly" @click="onClick">
     <slot />
   </button>
 </template>
@@ -19,7 +19,8 @@ function onClick() {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-.base_btn:disabled {
+.base_btn:disabled,
+.base_btn:read-only {
   cursor: not-allowed;
   opacity: 0.6;
 }
