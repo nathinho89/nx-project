@@ -28,7 +28,7 @@ jobs:
 
       - name: Start Nx Cloud agents
         if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.fork == false }}
-        run: npx nx start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
+        run: npx nx-cloud start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after="build" # can be stopped after e2e-ci
 
       - name: Setup Node
         uses: actions/setup-node@v4
