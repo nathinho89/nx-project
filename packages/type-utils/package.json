@@ -8,5 +8,16 @@
   "scripts": {
     "build": "nx run type-utils:build",
     "dev": "tsc -b -w"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+        "options": {
+          "command": "tsc -p packages/type-utils/tsconfig.build.json"
+        }
+      }
+    }
   }
 }
