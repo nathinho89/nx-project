@@ -3,13 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "types": "dist/packages/type-utils/index.d.ts",
+  "files": ["dist", "src"],
   "scripts": {
-    "build": "tsc -b",
+    "build": "nx run type-utils:build",
     "dev": "tsc -b -w"
   }
 }

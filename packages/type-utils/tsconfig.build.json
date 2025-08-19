@@ -1,12 +1,12 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "../../dist/packages/type-utils",
+    "composite": true,
     "declaration": true,
-    "declarationDir": "../../dist/packages/type-utils/types",
     "emitDeclarationOnly": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "rootDir": "src",
+    "outDir": "../../dist/packages/type-utils"
   },
   "include": ["src"]
 }
